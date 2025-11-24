@@ -320,7 +320,14 @@
             const doc = parser.parseFromString(html, 'text/html');
             const texto = doc.body.innerText;
 
-            console.log('Parseando texto, primeros 500 caracteres:', texto.substring(0, 500));
+            console.log('Parseando texto, primeros 2000 caracteres:', texto.substring(0, 2000));
+
+            // Buscar la sección de tiempos
+            const inicioTiempos = texto.indexOf('Próximos autobuses');
+            if (inicioTiempos !== -1) {
+                console.log('Encontrada sección de tiempos en posición:', inicioTiempos);
+                console.log('Texto desde tiempos (1000 chars):', texto.substring(inicioTiempos, inicioTiempos + 1000));
+            }
 
             // Buscar patrones como "Línea L41 LLEGANDO A PARADA" o "Línea L41 8 minutos"
             const lineas = texto.split('\n');
