@@ -213,8 +213,9 @@
 
                 // Probar con diferentes proxies CORS
                 const proxies = [
+                    'https://corsproxy.io/?',
                     'https://api.allorigins.win/raw?url=',
-                    'https://corsproxy.io/?'
+                    'https://cors-anywhere.herokuapp.com/'
                 ];
 
                 let html = null;
@@ -223,7 +224,9 @@
                 for (const proxyUrl of proxies) {
                     try {
                         console.log('Intentando con proxy:', proxyUrl);
-                        const url = encodeURIComponent(paradas[id].url);
+                        // Añadir timestamp para evitar caché
+                        const urlConTimestamp = paradas[id].url + '&_t=' + Date.now();
+                        const url = encodeURIComponent(urlConTimestamp);
                         const response = await fetch(proxyUrl + url);
 
                         if (!response.ok) {
@@ -271,14 +274,34 @@
             resultsDiv.innerHTML = '<div class="loading">Cargando todas las paradas...</div>';
 
             try {
-                const proxyUrl = 'https://api.allorigins.win/raw?url=';
+                const proxies = [
+                    'https://corsproxy.io/?',
+                    'https://api.allorigins.win/raw?url=',
+                    'https://cors-anywhere.herokuapp.com/'
+                ];
+
                 const promesas = Object.entries(paradas).map(async ([id, parada]) => {
-                    const url = encodeURIComponent(parada.url);
-                    const response = await fetch(proxyUrl + url);
-                    const html = await response.text();
+                    let html = null;
+
+                    // Intentar con cada proxy hasta que funcione uno
+                    for (const proxyUrl of proxies) {
+                        try {
+                            // Añadir timestamp para evitar caché
+                            const urlConTimestamp = parada.url + '&_t=' + Date.now();
+                            const url = encodeURIComponent(urlConTimestamp);
+                            const response = await fetch(proxyUrl + url);
+                            if (response.ok) {
+                                html = await response.text();
+                                break;
+                            }
+                        } catch (err) {
+                            console.warn('Proxy falló para', parada.nombre, ':', proxyUrl);
+                        }
+                    }
+
                     return {
                         parada: parada.nombre,
-                        tiempos: parsearTiempos(html, parada.nombre)
+                        tiempos: html ? parsearTiempos(html, parada.nombre) : []
                     };
                 });
 
@@ -304,10 +327,11 @@
 
                 mostrarTiemposCombinados(todosLosTiempos);
             } catch (error) {
+                console.error('Error en cargarTodasLasParadas:', error);
                 resultsDiv.innerHTML = `
                     <div class="error">
                         <strong>Error al cargar los datos</strong><br>
-                        Puede que haya un problema de conexión.
+                        ${error.message}<br>
                         <button class="btn btn-refresh" onclick="cargarTodasLasParadas()">Reintentar</button>
                     </div>
                 `;
@@ -329,37 +353,56 @@
                 console.log('Texto desde tiempos (1000 chars):', texto.substring(inicioTiempos, inicioTiempos + 1000));
             }
 
-            // Buscar patrones como "Línea L41 LLEGANDO A PARADA" o "Línea L41 8 minutos"
-            const lineas = texto.split('\n');
-            console.log('Total de líneas:', lineas.length);
+            // Buscar TODAS las coincidencias en el texto completo (no línea por línea)
+            // Hay dos formatos de líneas:
+            // - Reino Unido: L41, L42 (2 dígitos)
+            // - Buenavista/Italia: L1, L2 (1 dígito)
 
-            let encontrados = 0;
-            for (const linea of lineas) {
-                const matchLlegando = linea.match(/Línea\s+(L\d+)\s+LLEGANDO A PARADA/i);
-                if (matchLlegando) {
-                    console.log('Encontrado bus llegando:', matchLlegando[1]);
-                    tiempos.push({
-                        linea: matchLlegando[1],
-                        estado: 'LLEGANDO A PARADA',
-                        minutos: 0
-                    });
-                    encontrados++;
-                    continue;
-                }
+            // Buscar buses que están llegando (ambos formatos)
+            const regexLlegando2 = /Línea\s+(L4\d)LLEGANDO A PARADA/gi;  // L4X (2 dígitos)
+            const regexLlegando1 = /Línea\s+(L[12])LLEGANDO A PARADA/gi; // L1 o L2 (1 dígito)
 
-                const matchMinutos = linea.match(/Línea\s+(L\d+)\s+(\d+)\s+minutos/i);
-                if (matchMinutos) {
-                    console.log('Encontrado bus en', matchMinutos[2], 'min:', matchMinutos[1]);
-                    tiempos.push({
-                        linea: matchMinutos[1],
-                        estado: matchMinutos[2] + ' min',
-                        minutos: parseInt(matchMinutos[2])
-                    });
-                    encontrados++;
-                }
+            for (const match of texto.matchAll(regexLlegando2)) {
+                console.log('Encontrado bus llegando:', match[1]);
+                tiempos.push({
+                    linea: match[1],
+                    estado: 'LLEGANDO A PARADA',
+                    minutos: 0
+                });
             }
 
-            console.log('Total buses encontrados:', encontrados);
+            for (const match of texto.matchAll(regexLlegando1)) {
+                console.log('Encontrado bus llegando:', match[1]);
+                tiempos.push({
+                    linea: match[1],
+                    estado: 'LLEGANDO A PARADA',
+                    minutos: 0
+                });
+            }
+
+            // Buscar buses con minutos específicos (ambos formatos)
+            const regexMinutos2 = /Línea\s+(L4\d)(\d+)\s+minutos/gi;  // L4X (2 dígitos)
+            const regexMinutos1 = /Línea\s+(L[12])(\d+)\s+minutos/gi; // L1 o L2 (1 dígito)
+
+            for (const match of texto.matchAll(regexMinutos2)) {
+                console.log('Encontrado bus en', match[2], 'min:', match[1]);
+                tiempos.push({
+                    linea: match[1],
+                    estado: match[2] + ' min',
+                    minutos: parseInt(match[2])
+                });
+            }
+
+            for (const match of texto.matchAll(regexMinutos1)) {
+                console.log('Encontrado bus en', match[2], 'min:', match[1]);
+                tiempos.push({
+                    linea: match[1],
+                    estado: match[2] + ' min',
+                    minutos: parseInt(match[2])
+                });
+            }
+
+            console.log('Total buses encontrados:', tiempos.length);
             return tiempos;
         }
 
