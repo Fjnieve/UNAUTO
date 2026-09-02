@@ -203,6 +203,43 @@
             128: { nombre: 'ITALIA, 294', url: 'https://unauto.es/tiempos-de-llegada/?paradas=&seleccion_de_parada_nombre_valor=ITALIA%2C+294&id_parada=128&nombre_parada=ITALIA%2C+294' }
         };
 
+        // corsproxy.io ahora exige API key y cors-anywhere.herokuapp.com bloquea con 403
+        // salvo desbloqueo manual: ya no sirven para una PWA. r.jina.ai es hoy el más fiable.
+        const PROXIES = [
+            url => 'https://r.jina.ai/' + url,
+            url => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url),
+            url => 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url)
+        ];
+
+        async function fetchConTimeout(url, ms) {
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), ms);
+            try {
+                const response = await fetch(url, { signal: controller.signal });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.text();
+            } finally {
+                clearTimeout(timer);
+            }
+        }
+
+        async function fetchConProxy(targetUrl, nombreLog) {
+            const urlConTimestamp = targetUrl + '&_t=' + Date.now();
+            let ultimoError;
+            for (const buildProxyUrl of PROXIES) {
+                try {
+                    console.log('Intentando con proxy para', nombreLog, ':', buildProxyUrl(''));
+                    const html = await fetchConTimeout(buildProxyUrl(urlConTimestamp), 7000);
+                    console.log('HTML recibido para', nombreLog, ', longitud:', html.length);
+                    return html;
+                } catch (err) {
+                    console.warn('Proxy falló para', nombreLog, ':', err.message);
+                    ultimoError = err;
+                }
+            }
+            throw ultimoError || new Error('No se pudo obtener datos');
+        }
+
         async function cargarParada(id, nombre) {
             const resultsDiv = document.getElementById('results');
             resultsDiv.classList.remove('hidden');
@@ -211,41 +248,7 @@
             try {
                 console.log('Cargando parada:', nombre, 'ID:', id);
 
-                // Probar con diferentes proxies CORS
-                const proxies = [
-                    'https://corsproxy.io/?',
-                    'https://api.allorigins.win/raw?url=',
-                    'https://cors-anywhere.herokuapp.com/'
-                ];
-
-                let html = null;
-                let lastError = null;
-
-                for (const proxyUrl of proxies) {
-                    try {
-                        console.log('Intentando con proxy:', proxyUrl);
-                        // Añadir timestamp para evitar caché
-                        const urlConTimestamp = paradas[id].url + '&_t=' + Date.now();
-                        const url = encodeURIComponent(urlConTimestamp);
-                        const response = await fetch(proxyUrl + url);
-
-                        if (!response.ok) {
-                            throw new Error(`HTTP ${response.status}`);
-                        }
-
-                        html = await response.text();
-                        console.log('HTML recibido, longitud:', html.length);
-                        break;
-                    } catch (err) {
-                        console.warn('Proxy falló:', proxyUrl, err);
-                        lastError = err;
-                    }
-                }
-
-                if (!html) {
-                    throw lastError || new Error('No se pudo obtener datos');
-                }
-
+                const html = await fetchConProxy(paradas[id].url, nombre);
                 const tiempos = parsearTiempos(html, nombre);
                 console.log('Tiempos parseados:', tiempos);
 
@@ -274,29 +277,12 @@
             resultsDiv.innerHTML = '<div class="loading">Cargando todas las paradas...</div>';
 
             try {
-                const proxies = [
-                    'https://corsproxy.io/?',
-                    'https://api.allorigins.win/raw?url=',
-                    'https://cors-anywhere.herokuapp.com/'
-                ];
-
                 const promesas = Object.entries(paradas).map(async ([id, parada]) => {
                     let html = null;
-
-                    // Intentar con cada proxy hasta que funcione uno
-                    for (const proxyUrl of proxies) {
-                        try {
-                            // Añadir timestamp para evitar caché
-                            const urlConTimestamp = parada.url + '&_t=' + Date.now();
-                            const url = encodeURIComponent(urlConTimestamp);
-                            const response = await fetch(proxyUrl + url);
-                            if (response.ok) {
-                                html = await response.text();
-                                break;
-                            }
-                        } catch (err) {
-                            console.warn('Proxy falló para', parada.nombre, ':', proxyUrl);
-                        }
+                    try {
+                        html = await fetchConProxy(parada.url, parada.nombre);
+                    } catch (err) {
+                        console.warn('No se pudo obtener datos para', parada.nombre, ':', err.message);
                     }
 
                     return {
@@ -338,11 +324,19 @@
             }
         }
 
-        function parsearTiempos(html, nombreParada) {
+        function parsearTiempos(contenido, nombreParada) {
             const tiempos = [];
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const texto = doc.body.innerText;
+            let texto;
+
+            if (/<html|<!doctype html/i.test(contenido)) {
+                // Respuesta es HTML completo: extraer el texto visible
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(contenido, 'text/html');
+                texto = doc.body.innerText || doc.body.textContent;
+            } else {
+                // Respuesta ya es texto plano (p.ej. desde un proxy tipo "reader")
+                texto = contenido;
+            }
 
             console.log('Parseando texto, primeros 2000 caracteres:', texto.substring(0, 2000));
 
@@ -358,9 +352,10 @@
             // - Reino Unido: L41, L42 (2 dígitos)
             // - Buenavista/Italia: L1, L2 (1 dígito)
 
-            // Buscar buses que están llegando (ambos formatos)
-            const regexLlegando2 = /Línea\s+(L4\d)LLEGANDO A PARADA/gi;  // L4X (2 dígitos)
-            const regexLlegando1 = /Línea\s+(L[12])LLEGANDO A PARADA/gi; // L1 o L2 (1 dígito)
+            // Buscar buses que están llegando (ambos formatos, con o sin espacio
+            // entre la línea y el estado según de dónde venga el texto)
+            const regexLlegando2 = /Línea\s+(L4\d)\s*LLEGANDO A PARADA/gi;  // L4X (2 dígitos)
+            const regexLlegando1 = /Línea\s+(L[12])\s*LLEGANDO A PARADA/gi; // L1 o L2 (1 dígito)
 
             for (const match of texto.matchAll(regexLlegando2)) {
                 console.log('Encontrado bus llegando:', match[1]);
@@ -381,8 +376,8 @@
             }
 
             // Buscar buses con minutos específicos (ambos formatos)
-            const regexMinutos2 = /Línea\s+(L4\d)(\d+)\s+minutos/gi;  // L4X (2 dígitos)
-            const regexMinutos1 = /Línea\s+(L[12])(\d+)\s+minutos/gi; // L1 o L2 (1 dígito)
+            const regexMinutos2 = /Línea\s+(L4\d)\s*(\d+)\s+minutos/gi;  // L4X (2 dígitos)
+            const regexMinutos1 = /Línea\s+(L[12])\s*(\d+)\s+minutos/gi; // L1 o L2 (1 dígito)
 
             for (const match of texto.matchAll(regexMinutos2)) {
                 console.log('Encontrado bus en', match[2], 'min:', match[1]);
