@@ -1,0 +1,1082 @@
+[
+{
+"nombre":"ACADEMIA DE INFANTERÍA",
+"id":277
+},
+{
+"nombre":"ALEMANIA",
+"id":3
+},
+{
+"nombre":"ALEMANIA (ESQ. REINO UNIDO)",
+"id":4
+},
+{
+"nombre":"ALEMANIA, 87",
+"id":6
+},
+{
+"nombre":"ALEMANIA,5",
+"id":5
+},
+{
+"nombre":"ALFONSO VI (JUNTO A FUENTE)",
+"id":7
+},
+{
+"nombre":"AVDA BARBER 41",
+"id":274
+},
+{
+"nombre":"AVDA BARBER 85",
+"id":273
+},
+{
+"nombre":"AVDA BARBER 9",
+"id":275
+},
+{
+"nombre":"AVDA SANTA BÁRBARA (BANCO)",
+"id":12
+},
+{
+"nombre":"AVDA SANTA BÁRBARA (FRENTE POLIDEPORTIVO)",
+"id":11
+},
+{
+"nombre":"AVDA. BARBER (CENTRO DE ESPECIALIDADES)",
+"id":14
+},
+{
+"nombre":"AVDA. BARBER (ESQUINA CALLE LA RIOJA)",
+"id":15
+},
+{
+"nombre":"AVDA. CARLOS III (APARCAMIENTO)",
+"id":17
+},
+{
+"nombre":"AVDA. CARLOS III (ESQ. PSO. CIRCO ROMANO)",
+"id":19
+},
+{
+"nombre":"AVDA. CARLOS III (FRENTE APARCAMIENTO)",
+"id":18
+},
+{
+"nombre":"AVDA. CASTILLA LA MANCHA (POLIDEPORTIVO)",
+"id":21
+},
+{
+"nombre":"AVDA. CASTILLA LA MANCHA,26",
+"id":22
+},
+{
+"nombre":"AVDA. DE FRANCIA (COLEGIO CIUDAD DE NARA)",
+"id":24
+},
+{
+"nombre":"AVDA. DE FRANCIA (CONS. SANIDAD)",
+"id":23
+},
+{
+"nombre":"AVDA. DE FRANCIA (CONVENTO)",
+"id":13
+},
+{
+"nombre":"AVDA. DE FRANCIA (FRENTE COLEGIO)",
+"id":26
+},
+{
+"nombre":"AVDA. DE FRANCIA (FRENTE CONVENTO)",
+"id":25
+},
+{
+"nombre":"AVDA. DE LA CAVA",
+"id":50
+},
+{
+"nombre":"AVDA. DE LA LEGUA (FRENTE Nº 50)",
+"id":233
+},
+{
+"nombre":"AVDA. DE LA LEGUA (GLORIETA ENTRADA)",
+"id":129
+},
+{
+"nombre":"AVDA. DEL MADROÑO (ESQUINA CALLE FRESNO)",
+"id":29
+},
+{
+"nombre":"AVDA. DEL MADROÑO (ESQUINA CALLE SERBAL)",
+"id":28
+},
+{
+"nombre":"AVDA. DEL MADROÑO (FRENTE PARQUE INFANTIL)",
+"id":30
+},
+{
+"nombre":"AVDA. DEL MADROÑO (GLORIETA SALIDA VALPARAÍSO)",
+"id":31
+},
+{
+"nombre":"AVDA. DEL MADROÑO (ROTONDA ENTRADA VALPARAÍSO)",
+"id":136
+},
+{
+"nombre":"AVDA. DEL OLMO, 28",
+"id":32
+},
+{
+"nombre":"AVDA. DEL OLMO, 35",
+"id":33
+},
+{
+"nombre":"AVDA. DEL OLMO, 7",
+"id":34
+},
+{
+"nombre":"AVDA. DEL TILO",
+"id":27
+},
+{
+"nombre":"AVDA. EUROPA (ALTOS DE BELLAVISTA)",
+"id":39
+},
+{
+"nombre":"AVDA. EUROPA (ESQUINA CALLE ROMA)",
+"id":36
+},
+{
+"nombre":"AVDA. EUROPA (FRENTE IGLESIA S. JULIAN)",
+"id":42
+},
+{
+"nombre":"AVDA. EUROPA (IGLESIA)",
+"id":35
+},
+{
+"nombre":"AVDA. EUROPA (INSTITUTO UNIVERSIDAD LABORAL)",
+"id":38
+},
+{
+"nombre":"AVDA. EUROPA , FRENTE Nº 24",
+"id":40
+},
+{
+"nombre":"AVDA. EUROPA FRENTE Nº 16",
+"id":41
+},
+{
+"nombre":"AVDA. EUROPA, 24 ",
+"id":37
+},
+{
+"nombre":"AVDA. GENERAL VILLALBA (ESQUINA DUQUE DE LERMA)",
+"id":47
+},
+{
+"nombre":"AVDA. GENERAL VILLALBA (GLORIETA DUQUE DE LERMA)",
+"id":48
+},
+{
+"nombre":"AVDA. GENERAL VILLALBA, 19",
+"id":45
+},
+{
+"nombre":"AVDA. GENERAL VILLALBA, 24",
+"id":44
+},
+{
+"nombre":"AVDA. GENERAL VILLALBA, 3",
+"id":43
+},
+{
+"nombre":"AVDA. GENERAL VILLALBA, 6",
+"id":46
+},
+{
+"nombre":"AVDA. IRLANDA, 6",
+"id":49
+},
+{
+"nombre":"AVDA. LA CAVA (ROTONDA AVDA. RECONQUISTA)",
+"id":51
+},
+{
+"nombre":"AVDA. MAS DEL RIBERO",
+"id":52
+},
+{
+"nombre":"AVDA. MAS DEL RIBERO (FRENTE COLEGIO)",
+"id":53
+},
+{
+"nombre":"AVDA. MONTESIÓN (ESQUINA CALLE HINOJO)",
+"id":281
+},
+{
+"nombre":"AVDA. MONTESIÓN (FRENTE CALLE HINOJO)",
+"id":282
+},
+{
+"nombre":"AVDA. MONTESIÓN (ROTONDA)",
+"id":283
+},
+{
+"nombre":"AVDA. PORTUGAL (FRENTE CONSEJERÍA)",
+"id":56
+},
+{
+"nombre":"AVDA. PORTUGAL (RESIDENCIA 3ª EDAD)",
+"id":54
+},
+{
+"nombre":"AVDA. PORTUGAL, 2",
+"id":55
+},
+{
+"nombre":"AVDA. PURÍSIMA CONCEPCIÓN",
+"id":57
+},
+{
+"nombre":"AVDA. RECONQUISTA 13",
+"id":58
+},
+{
+"nombre":"AVDA. RECONQUISTA FRENTE AL NÚMERO 12 ",
+"id":59
+},
+{
+"nombre":"AVDA. RECONQUISTA, 14",
+"id":61
+},
+{
+"nombre":"AVDA. RECONQUISTA, 20",
+"id":62
+},
+{
+"nombre":"AVDA. RECONQUISTA, 6",
+"id":63
+},
+{
+"nombre":"AVDA. RECONQUISTA, ESQUINA AVDA. DE CARLOS III",
+"id":60
+},
+{
+"nombre":"AVDA. RÍO GUADIANA (GLORIETA RÍO BRACEA)",
+"id":86
+},
+{
+"nombre":"AVDA. RÍO GUADIANA (URGENCIAS)",
+"id":178
+},
+{
+"nombre":"AVDA. SANTA BÁRBARA (PLAZA STA. BÁRBARA)",
+"id":64
+},
+{
+"nombre":"AVDA. SANTA BÁRBARA, CENTRO DE SALUD",
+"id":66
+},
+{
+"nombre":"AVDA. SANTA BÁRBARA, FRENTE Nº 89",
+"id":65
+},
+{
+"nombre":"AVDA.ADOLFO SUAREZ (FRENTE OBSERVATORIO GEOFÍSICO)",
+"id":95
+},
+{
+"nombre":"AVDA.CARLOS III (PARQUE CIRCO ROMANO)",
+"id":16
+},
+{
+"nombre":"AVDA.DE MADRID (TOLETUM)",
+"id":20
+},
+{
+"nombre":"AVENIDA ADOLFO SUAREZ (ESQUINA CALLE NARDO)",
+"id":91
+},
+{
+"nombre":"AVENIDA DE VISTAHERMOSA",
+"id":90
+},
+{
+"nombre":"BRUSELAS",
+"id":68
+},
+{
+"nombre":"BRUSELAS 4",
+"id":67
+},
+{
+"nombre":"CABRAHIGOS (COLEGIO ANGEL DEL ALCAZAR)",
+"id":69
+},
+{
+"nombre":"CABRAHIGOS, 9 (FRENTE RESIDENCIA 3 EDAD)",
+"id":70
+},
+{
+"nombre":"CALLE AIRÉN (COLEGIO MAYOL)",
+"id":2
+},
+{
+"nombre":"CALLE AIRÉN (ESQUINA CALLE MAZUELO)",
+"id":1
+},
+{
+"nombre":"CALLE ARROYO ",
+"id":9
+},
+{
+"nombre":"CALLE AZUCENA",
+"id":73
+},
+{
+"nombre":"CALLE AZUCENA, 14",
+"id":259
+},
+{
+"nombre":"CALLE CARRERA",
+"id":74
+},
+{
+"nombre":"CALLE CERVANTES (FRENTE Nº 12)",
+"id":89
+},
+{
+"nombre":"CALLE CERVANTES (RESIDENCIA UNIVERSITARIA)",
+"id":88
+},
+{
+"nombre":"CALLE CUENCA",
+"id":285
+},
+{
+"nombre":"CALLE DE LA PAZ",
+"id":76
+},
+{
+"nombre":"CALLE DE LA UNIÓN",
+"id":284
+},
+{
+"nombre":"CALLE DE LA UNIÓN",
+"id":92
+},
+{
+"nombre":"CALLE JUAN CORREA DE VIVAR",
+"id":130
+},
+{
+"nombre":"CALLE VALDEMOLINOS",
+"id":10
+},
+{
+"nombre":"CAMINO HUERTA, 5",
+"id":71
+},
+{
+"nombre":"CAMINO HUERTA, JUNTO AL PARQUE",
+"id":72
+},
+{
+"nombre":"CARDENAL TAVERA (PARQUE DE LA VEGA)",
+"id":77
+},
+{
+"nombre":"CARDENAL TAVERA (PARQUE SISEBUTO)",
+"id":78
+},
+{
+"nombre":"CARRERAS SAN SEBASTIAN (BAJADA DEL BARCO)",
+"id":83
+},
+{
+"nombre":"CARRERAS SAN SEBASTIAN (ESQ. PZA. DON FERNANDO)",
+"id":79
+},
+{
+"nombre":"CARRERAS SAN SEBASTIAN (FRENTE IGLESIA)",
+"id":82
+},
+{
+"nombre":"CARRERAS SAN SEBASTIAN (GLORIETA CORTES)",
+"id":81
+},
+{
+"nombre":"CARRERAS SAN SEBASTIAN, 6 ",
+"id":80
+},
+{
+"nombre":"CASA CAMPO (ROTONDA VUELTA)",
+"id":253
+},
+{
+"nombre":"CASTILLO SAN SERVANDO (HOSPITAL PROVINCIAL)",
+"id":85
+},
+{
+"nombre":"CEMENTERIO PUERTA LATERAL",
+"id":266
+},
+{
+"nombre":"CEMENTERIO PUERTA PRINCIPAL",
+"id":265
+},
+{
+"nombre":"CENTRO COMERCIAL (LUZ DEL TAJO)",
+"id":87
+},
+{
+"nombre":"CENTRO COMERCIAL ABADIA",
+"id":267
+},
+{
+"nombre":"CTRA. AVILA (OBSERVATORIO GEOFÍSICO)",
+"id":94
+},
+{
+"nombre":"CTRA. AVILA (ROTONDA H.TRES CULTURAS)",
+"id":93
+},
+{
+"nombre":"CTRA. CIRCUNVALACIÓN (CRUCE CTRA. COBISA)",
+"id":100
+},
+{
+"nombre":"CTRA. CIRCUNVALACIÓN (ENTRADA PTE. DE LA CAVA)",
+"id":108
+},
+{
+"nombre":"CTRA. CIRCUNVALACIÓN (H. CIUDAD DE TOLEDO)",
+"id":105
+},
+{
+"nombre":"CTRA. CIRCUNVALACIÓN (PUENTE SAN MARTÍN)",
+"id":107
+},
+{
+"nombre":"CTRA. CIRCUNVALACIÓN (ROTONDA CTRA. POLAN)",
+"id":106
+},
+{
+"nombre":"CTRA. COBISA",
+"id":101
+},
+{
+"nombre":"CTRA. MOCEJÓN (ENTRADA AZUCAICA)",
+"id":111
+},
+{
+"nombre":"CTRA. MOCEJÓN (RES. SAN JOSÉ)",
+"id":112
+},
+{
+"nombre":"CTRA. MOCEJÓN, GLORIETA URB. CASA DE CAMPO",
+"id":109
+},
+{
+"nombre":"CTRA. MOCEJÓN, RESIDENCIA SAN JOSÉ",
+"id":110
+},
+{
+"nombre":"CTRA. NAVALPINO",
+"id":96
+},
+{
+"nombre":"CTRA. NAVALPINO (CAMPING)",
+"id":115
+},
+{
+"nombre":"CTRA. NAVALPINO (FRENTE PTE. SAN MARTÍN)",
+"id":97
+},
+{
+"nombre":"CTRA. NAVALPINO (INTERSECCIÓN PTE. DE LA CAVA)",
+"id":118
+},
+{
+"nombre":"CTRA. NAVALPINO (OLIVAR DE LOS POZOS)",
+"id":116
+},
+{
+"nombre":"CTRA. NAVALPINO (OLIVILLA)",
+"id":114
+},
+{
+"nombre":"CTRA. NAVALPINO (OLIVILLA)",
+"id":117
+},
+{
+"nombre":"CTRA. NAVALPINO (SALIDA PUENTE)",
+"id":113
+},
+{
+"nombre":"CTRA. PERALEDA",
+"id":150
+},
+{
+"nombre":"DUQUE DE LERMA 1",
+"id":270
+},
+{
+"nombre":"DUQUE DE LERMA 5",
+"id":269
+},
+{
+"nombre":"ENTRADA H.N. PARAPLÉJICOS",
+"id":287
+},
+{
+"nombre":"ESPARTEROS, ESQUINA VIRGEN CHICA",
+"id":119
+},
+{
+"nombre":"EST. DE AUTOBUSES (DIRECCION STA.BÁRBARA-POLÍGONO)",
+"id":120
+},
+{
+"nombre":"EST. DE AUTOBUSES, DIRECCIÓN CASCO HISTÓRICO",
+"id":121
+},
+{
+"nombre":"FRENTE CEMENTERIO PUERTA LATERAL",
+"id":1001
+},
+{
+"nombre":"FRENTE CEMENTERIO PUERTA PRINCIPAL",
+"id":261
+},
+{
+"nombre":"FRENTE PZA. BARRIO NUEVO",
+"id":254
+},
+{
+"nombre":"GANTE",
+"id":124
+},
+{
+"nombre":"H.N. PARAPLÉJICOS",
+"id":125
+},
+{
+"nombre":"H.TRES CULTURAS",
+"id":126
+},
+{
+"nombre":"HOSPITAL UNIVERSITARIO",
+"id":179
+},
+{
+"nombre":"HOSPITAL VIRGEN DEL VALLE",
+"id":102
+},
+{
+"nombre":"HOTEL BEATRIZ (ROTONDA  )",
+"id":127
+},
+{
+"nombre":"ITALIA, 294",
+"id":128
+},
+{
+"nombre":"LISBOA",
+"id":132
+},
+{
+"nombre":"LISBOA 4",
+"id":131
+},
+{
+"nombre":"MARQUÉS DE MENDIGORRIA (COLEGIO)",
+"id":134
+},
+{
+"nombre":"MARQUÉS DE MENDIGORRIA (JUZGADOS)",
+"id":135
+},
+{
+"nombre":"MARQUÉS DE MENDIGORRIA, 9",
+"id":133
+},
+{
+"nombre":"MIRADOR DEL VALLE",
+"id":103
+},
+{
+"nombre":"MOLINO DE VIENTO (UNAUTO)",
+"id":137
+},
+{
+"nombre":"MONTESIÓN (ROTONDA)",
+"id":138
+},
+{
+"nombre":"PASEO DE CABESTREROS",
+"id":140
+},
+{
+"nombre":"PASEO DE CABESTREROS (ESQ. PSO. SAN LUCAS)",
+"id":139
+},
+{
+"nombre":"PASEO DE LA ROSA ",
+"id":143
+},
+{
+"nombre":"PASEO DE LA ROSA (FRENTE A RENFE)",
+"id":141
+},
+{
+"nombre":"PASEO DE LA ROSA, 15 ",
+"id":148
+},
+{
+"nombre":"PASEO DE LA ROSA, 92",
+"id":142
+},
+{
+"nombre":"PASEO DE LA ROSA, BULEVAR FRENTE Nº 92",
+"id":144
+},
+{
+"nombre":"PASEO DE LA ROSA, RENFE",
+"id":145
+},
+{
+"nombre":"PASEO DE LA ROSA,128",
+"id":146
+},
+{
+"nombre":"PASEO DE LA ROSA,170",
+"id":147
+},
+{
+"nombre":"PASEO DE RECAREDO (ROTONDA)",
+"id":149
+},
+{
+"nombre":"PASEO DE SAN EUGENIO",
+"id":271
+},
+{
+"nombre":"PASEO DE SAN EUGENIO",
+"id":272
+},
+{
+"nombre":"PASEO DE SAN EUGENIO IES GRECO",
+"id":264
+},
+{
+"nombre":"PASEO SAN EUGENIO FRENTE IES GRECO",
+"id":263
+},
+{
+"nombre":"PERALEDA (CLÍNICA DEL ROSARIO)",
+"id":151
+},
+{
+"nombre":"PLAZA BARRIO NUEVO",
+"id":152
+},
+{
+"nombre":"PLAZA DE AZUCAICA",
+"id":153
+},
+{
+"nombre":"PLAZA DE SANTA BÁRBARA",
+"id":154
+},
+{
+"nombre":"PLAZA DEL CONDE",
+"id":155
+},
+{
+"nombre":"PSO. RECAREDO (FRENTE PTA. CAMBRÓN)",
+"id":243
+},
+{
+"nombre":"PUENTE SAN MARTIN (RECAREDO)",
+"id":244
+},
+{
+"nombre":"PUERTA DE BISAGRA",
+"id":156
+},
+{
+"nombre":"PUERTA DEL CAMBRÓN (CJÓN SAN MARTÍN)",
+"id":157
+},
+{
+"nombre":"RDA. BUENAVISTA, 24 ",
+"id":158
+},
+{
+"nombre":"RDA. BUENAVISTA, 28 ",
+"id":159
+},
+{
+"nombre":"REAL DEL ARRABAL (INTERIOR BISAGRA)",
+"id":8
+},
+{
+"nombre":"REINO UNIDO ",
+"id":160
+},
+{
+"nombre":"REYES CATÓLICOS",
+"id":161
+},
+{
+"nombre":"RIGOBERTA MENCHU ",
+"id":162
+},
+{
+"nombre":"RIO ALBERCHE (BIBLIOTECA)",
+"id":163
+},
+{
+"nombre":"RIO ALBERCHE (CENTRO CULTURAL)",
+"id":166
+},
+{
+"nombre":"RIO ALBERCHE (FRENTE BIBLIOTECA)",
+"id":169
+},
+{
+"nombre":"RIO ALBERCHE (PARQUE DE LA LUZ)",
+"id":167
+},
+{
+"nombre":"RIO ALBERCHE 112 (CABECERA)",
+"id":172
+},
+{
+"nombre":"RIO ALBERCHE, 1 (CONF. RIO ESTENILLA)",
+"id":173
+},
+{
+"nombre":"RIO ALBERCHE, 15",
+"id":174
+},
+{
+"nombre":"RIO ALBERCHE, 25",
+"id":175
+},
+{
+"nombre":"RIO BULLAQUE (CENTRO SOCIAL)",
+"id":247
+},
+{
+"nombre":"RIO BULLAQUE (PARQUE ALCAZARES)",
+"id":250
+},
+{
+"nombre":"RIO CABRIEL (FRENTE ARCHIVO)",
+"id":191
+},
+{
+"nombre":"RIO ESTENILLA (CONSEJERIA)",
+"id":198
+},
+{
+"nombre":"RIO GUADARRAMA, 71 ",
+"id":202
+},
+{
+"nombre":"RIO JARAMA (FRENTE ARTES GRAFICAS)",
+"id":210
+},
+{
+"nombre":"RIO JARAMA (FRENTE I.T.V.)",
+"id":211
+},
+{
+"nombre":"RIO JARAMA (GALVANIZADOS TOLEDO)",
+"id":206
+},
+{
+"nombre":"RIO JARAMA (GRUPO PRILUX)",
+"id":205
+},
+{
+"nombre":"RIO JARAMA (MERCADO)",
+"id":207
+},
+{
+"nombre":"RIO JARAMA (TRINARANJUS)",
+"id":209
+},
+{
+"nombre":"RIO JARAMA, 27",
+"id":257
+},
+{
+"nombre":"RIO JARAMA, 29",
+"id":218
+},
+{
+"nombre":"RIO JARAMA  (CONFLUENCIA CON ESTENILLA)",
+"id":217
+},
+{
+"nombre":"RIO JARAMA  (JANSESN)",
+"id":216
+},
+{
+"nombre":"RIO VALDEYERNOS (FRENTE 26)",
+"id":248
+},
+{
+"nombre":"RONDA BUENAVISTA, 16 ",
+"id":225
+},
+{
+"nombre":"RONDA BUENAVISTA, 18 ",
+"id":226
+},
+{
+"nombre":"RONDA BUENAVISTA, 18 (ANTES ROTONDA)",
+"id":260
+},
+{
+"nombre":"RONDA BUENAVISTA, 2",
+"id":228
+},
+{
+"nombre":"RONDA BUENAVISTA, 22 ",
+"id":227
+},
+{
+"nombre":"RONDA BUENAVISTA, 6",
+"id":229
+},
+{
+"nombre":"RONDA DE TOLEDO ( CONF. CAMINO PONTEZUELAS)",
+"id":99
+},
+{
+"nombre":"RONDA DE TOLEDO, 1",
+"id":98
+},
+{
+"nombre":"RONDA DE TOLEDO, 34",
+"id":104
+},
+{
+"nombre":"RONDA DEL GRANADAL (ESTACION AUTOBUSES)",
+"id":230
+},
+{
+"nombre":"ROSA PARK (ANTES DE ROTONDA COLON)",
+"id":232
+},
+{
+"nombre":"ROSA PARK (ZONA DEPORTIVA)",
+"id":231
+},
+{
+"nombre":"RÍO ALBERCHE (ESQ. CASCAJOSO)",
+"id":165
+},
+{
+"nombre":"RÍO ALBERCHE (GLORIETA BULLAQUE)",
+"id":171
+},
+{
+"nombre":"RÍO ALBERCHE, 26 ",
+"id":176
+},
+{
+"nombre":"RÍO ALBERCHE, 50",
+"id":164
+},
+{
+"nombre":"RÍO ALBERCHE, 53",
+"id":168
+},
+{
+"nombre":"RÍO ALBERCHE, 6",
+"id":177
+},
+{
+"nombre":"RÍO ALBERCHE, ESQ. C/ TORCÓN",
+"id":170
+},
+{
+"nombre":"RÍO ARLÉS",
+"id":237
+},
+{
+"nombre":"RÍO ARLÉS (ROTONDA)",
+"id":238
+},
+{
+"nombre":"RÍO BOLADIEZ (ESQ. VENTALOMAR)",
+"id":182
+},
+{
+"nombre":"RÍO BOLADIEZ (ROTONDA DE LOS PATOS)",
+"id":185
+},
+{
+"nombre":"RÍO BOLADIEZ, 55",
+"id":184
+},
+{
+"nombre":"RÍO BOLADIEZ, 62",
+"id":181
+},
+{
+"nombre":"RÍO BOLADIEZ, 65 ",
+"id":183
+},
+{
+"nombre":"RÍO CABRIEL (ARCHIVO REGIONAL)",
+"id":194
+},
+{
+"nombre":"RÍO CABRIEL, 1",
+"id":195
+},
+{
+"nombre":"RÍO CABRIEL,1",
+"id":190
+},
+{
+"nombre":"RÍO CASCAJOSO",
+"id":196
+},
+{
+"nombre":"RÍO CASCAJOSO (ESQ. BOLADIEZ)",
+"id":75
+},
+{
+"nombre":"RÍO ESTENILLA (ESQUINA CALLE JARAMA)",
+"id":197
+},
+{
+"nombre":"RÍO FRESNEDOSO",
+"id":199
+},
+{
+"nombre":"RÍO FRESNEDOSO (ESQ. RÍO BULLAQUE)",
+"id":122
+},
+{
+"nombre":"RÍO FRESNEDOSO (ESQ. VALDEYERNOS)",
+"id":123
+},
+{
+"nombre":"RÍO FRESNEDOSO, 11",
+"id":200
+},
+{
+"nombre":"RÍO GUADARRAMA (CENTRO DE SALUD)",
+"id":203
+},
+{
+"nombre":"RÍO GUADARRAMA, 38",
+"id":189
+},
+{
+"nombre":"RÍO GUADIANA (FRENTE HOSPITAL)",
+"id":187
+},
+{
+"nombre":"RÍO GUADIANA (FRENTE RESIDENCIA 3ª EDAD)",
+"id":180
+},
+{
+"nombre":"RÍO GUADIANA (RESIDENCIA 3ª EDAD)",
+"id":186
+},
+{
+"nombre":"RÍO GUADIANA (SESCAM)",
+"id":188
+},
+{
+"nombre":"RÍO JARAMA (CONF. CON GUADARRAMA)",
+"id":215
+},
+{
+"nombre":"RÍO JARAMA, 38",
+"id":208
+},
+{
+"nombre":"RÍO JARAMA, 8",
+"id":219
+},
+{
+"nombre":"RÍO MESA",
+"id":222
+},
+{
+"nombre":"RÍO MESA (ESQ. CASCAJOSO)",
+"id":221
+},
+{
+"nombre":"RÍO MESA, 1 ",
+"id":223
+},
+{
+"nombre":"RÍO MESA, 2",
+"id":220
+},
+{
+"nombre":"RÍO PORTIÑA",
+"id":192
+},
+{
+"nombre":"RÍO PORTIÑA (FRENTE CALLE RÍO ESCABAS)",
+"id":193
+},
+{
+"nombre":"SALIDA H.N. PARAPLÉJICOS",
+"id":288
+},
+{
+"nombre":"SAN JUAN DE LOS REYES",
+"id":255
+},
+{
+"nombre":"SAN PEDRO EL VERDE (GLORIETA CTRA. PERALEDA)",
+"id":84
+},
+{
+"nombre":"SAN PEDRO EL VERDE (SOLIMAT)",
+"id":235
+},
+{
+"nombre":"SAN PEDRO EL VERDE (UNIVERSIDAD)",
+"id":234
+},
+{
+"nombre":"VALDEMOLINOS (DIRECCIÓN ZONA RESIDENCIAL)",
+"id":286
+},
+{
+"nombre":"VIA SERVICIO FASE III (ICSA)",
+"id":236
+},
+{
+"nombre":"ZARAGOZA ",
+"id":239
+},
+{
+"nombre":"ZARAGOZA ",
+"id":240
+},
+{
+"nombre":"ZOCODOVER (CUESTA CARLOS V)",
+"id":242
+},
+{
+"nombre":"ZOCODOVER (PLAZA)",
+"id":241
+}
+]
