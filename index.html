@@ -277,7 +277,11 @@
             resultsDiv.innerHTML = '<div class="loading">Cargando todas las paradas...</div>';
 
             try {
-                const promesas = Object.entries(paradas).map(async ([id, parada]) => {
+                // Se piden una a una (no en paralelo): pedir las 3 paradas a la vez
+                // dispara el límite de peticiones simultáneas de los proxies gratuitos
+                // (p.ej. r.jina.ai responde 403 si llegan varias a la vez).
+                const resultados = [];
+                for (const [id, parada] of Object.entries(paradas)) {
                     let html = null;
                     try {
                         html = await fetchConProxy(parada.url, parada.nombre);
@@ -285,13 +289,11 @@
                         console.warn('No se pudo obtener datos para', parada.nombre, ':', err.message);
                     }
 
-                    return {
+                    resultados.push({
                         parada: parada.nombre,
                         tiempos: html ? parsearTiempos(html, parada.nombre) : []
-                    };
-                });
-
-                const resultados = await Promise.all(promesas);
+                    });
+                }
 
                 // Combinar todos los tiempos y ordenar
                 const todosLosTiempos = [];
