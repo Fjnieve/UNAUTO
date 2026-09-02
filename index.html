@@ -203,9 +203,11 @@
             128: { nombre: 'ITALIA, 294', url: 'https://unauto.es/tiempos-de-llegada/?paradas=&seleccion_de_parada_nombre_valor=ITALIA%2C+294&id_parada=128&nombre_parada=ITALIA%2C+294' }
         };
 
-        // corsproxy.io ahora exige API key y cors-anywhere.herokuapp.com bloquea con 403
-        // salvo desbloqueo manual: ya no sirven para una PWA. r.jina.ai es hoy el más fiable.
+        // Proxy propio en Vercel (api/proxy.js de este mismo repo): no depende de
+        // límites compartidos con el resto de internet. Si algún día falla, se
+        // cae a proxies públicos de respaldo (menos fiables, pero gratuitos).
         const PROXIES = [
+            url => 'https://unauto.vercel.app/api/proxy?url=' + encodeURIComponent(url),
             url => 'https://r.jina.ai/' + url,
             url => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url),
             url => 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url)
