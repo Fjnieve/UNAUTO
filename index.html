@@ -279,6 +279,12 @@
             return 'https://unauto.es/tiempos-de-llegada/?id_parada=' + id;
         }
 
+        // Algunas paradas fijas solo deben mostrar una línea concreta (el resto
+        // de líneas que pasan por ahí no interesan para esta app).
+        const FILTRO_LINEA_POR_PARADA = {
+            226: 'L1' // RONDA BUENAVISTA, 18: solo L1, se descarta L2
+        };
+
         // Paradas fijas: siempre presentes, no se pueden borrar desde la app.
         const PARADAS_FIJAS = [
             { id: 160, nombre: 'REINO UNIDO' },
@@ -473,7 +479,11 @@
                 console.log('Cargando parada:', nombre, 'ID:', id);
 
                 const html = await fetchConProxy(urlParada(id), nombre);
-                const tiempos = parsearTiempos(html);
+                let tiempos = parsearTiempos(html);
+                const filtroLinea = FILTRO_LINEA_POR_PARADA[id];
+                if (filtroLinea) {
+                    tiempos = tiempos.filter(t => t.linea === filtroLinea);
+                }
                 console.log('Tiempos parseados:', tiempos);
 
                 mostrarTiempos([{ parada: nombre, tiempos }]);
@@ -519,9 +529,9 @@
                 // Secuencial (no en paralelo): pedir varias paradas a la vez dispara
                 // el límite de peticiones simultáneas de los proxies públicos de
                 // respaldo (p.ej. r.jina.ai responde 403 si llegan varias a la vez).
-                const italia = await consultarLineas(128, 'ITALIA, 294', null);
-                const reinoUnido = await consultarLineas(160, 'REINO UNIDO', null);
-                const buenavistaL1 = await consultarLineas(226, 'RONDA BUENAVISTA, 18', 'L1');
+                const italia = await consultarLineas(128, 'ITALIA, 294', FILTRO_LINEA_POR_PARADA[128]);
+                const reinoUnido = await consultarLineas(160, 'REINO UNIDO', FILTRO_LINEA_POR_PARADA[160]);
+                const buenavistaL1 = await consultarLineas(226, 'RONDA BUENAVISTA, 18', FILTRO_LINEA_POR_PARADA[226]);
 
                 const todosLosTiempos = [];
                 [italia, reinoUnido, buenavistaL1].forEach(resultado => {
